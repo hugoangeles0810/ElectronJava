@@ -13,6 +13,8 @@ cd ElectronJava
 npm install && npm start
 
 # To packaging
+comment or uncomment as appropriate
+
 ```javascript
 // For develop
 var path = require("path")
