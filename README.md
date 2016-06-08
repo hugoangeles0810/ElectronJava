@@ -23,3 +23,6 @@ JAR_PATH = path.join(process.cwd(), "ElectronUtil.jar");
 // For production
 /*JAR_PATH = path.join(process.cwd(), "resources", "app", "ElectronUtil.jar");*/
 ```
+
+later execute:
+npm run build
