@@ -11,3 +11,13 @@ git clone https://github.com/hugoangeles0810/ElectronJava
 cd ElectronJava
 # Install dependencies and run the app
 npm install && npm start
+
+# To packaging
+```javascript
+// For develop
+var path = require("path")
+JAR_PATH = path.join(process.cwd(), "ElectronUtil.jar");
+
+// For production
+/*JAR_PATH = path.join(process.cwd(), "resources", "app", "ElectronUtil.jar");*/
+```
