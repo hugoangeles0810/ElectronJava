@@ -1,7 +1,7 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "name": "Electron and Java",
+  "version": "0.1.0",
+  "description": "Demo ejecutando un Jar desde Electron",
   "main": "main.js",
   "scripts": {
     "start": "electron main.js"
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/electron/electron-quick-start#readme",
   "devDependencies": {
+    "electron-packager": "^7.0.3",
     "electron-prebuilt": "^1.2.0"
   }
 }

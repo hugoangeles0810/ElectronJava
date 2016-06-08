@@ -2,18 +2,60 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Demo Electron - Java</title>
+    <script>
+      // You can also require other files to run in this process
+      try {
+        require('./renderer.js')
+      } catch (e) {
+
+      }
+    </script>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+    article, footer {
+      width: 60%;
+      margin: 5em auto;
+      text-align: center;
+    }
+    footer {
+      margin-top: 50px;
+    }
+    button {
+      font-size: 24px;
+    }
+  </style>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-  </body>
+    <main>
+      <section>
+        <article>
+          <h1>Demo llamar java desde javascript con Electron</h1>
+          <p>*Esta es una página html cualquiera</p>
+          <button id="btnJar">Run Jar</button>
+        </article>
+        <footer>Autor: Hugo Angeles</footer>
+      </section>
+    </main>
+    <script>
+      try {
+        var child_process = require("child_process")
+        global.runJar =  function() {
+          var command = `java -jar ElectronUtil.jar`
+          console.log(child_process.execSync(command, {encoding: "utf-8"}))
+        }
+      } catch (e) {
+        window.runJar = function () {
+          alert("No estas viendo la página web en una aplicación Electron");
+        }
+      }
 
-  <script>
-    // You can also require other files to run in this process
-    require('./renderer.js')
-  </script>
+      var btn = document.getElementById("btnJar");
+      btn.onclick = runJar;
+    </script>
+  </body>
 </html>
