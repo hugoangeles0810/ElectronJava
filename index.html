@@ -8,7 +8,7 @@
       try {
         require('./renderer.js')
       } catch (e) {
-
+        console.log(e);
       }
     </script>
   <style>
@@ -44,8 +44,9 @@
     <script>
       try {
         var child_process = require("child_process")
+        var path = require("path")
         global.runJar =  function() {
-          var command = `java -jar ElectronUtil.jar`
+          var command = `java -jar ${JAR_PATH}`
           console.log(child_process.execSync(command, {encoding: "utf-8"}))
         }
       } catch (e) {
@@ -53,7 +54,6 @@
           alert("No estas viendo la página web en una aplicación Electron");
         }
       }
-
       var btn = document.getElementById("btnJar");
       btn.onclick = runJar;
     </script>
